@@ -1,4 +1,4 @@
-Documento de Arquitetura de Software: Sistema Edge-AI para Diagnóstico de Anemia
+Documento de Arquitetura de Software: Sistema Edge-AI para Diagnóstico de Anemia.
 1. Resumo Executivo
 Este documento descreve a arquitetura de um sistema inteligente de grau médico (Medical-Grade) focado no diagnóstico não invasivo de anemia infantil em áreas remotas. A solução elimina a dependência de conectividade constante, utilizando processamento Edge Computing em dispositivos móveis (smartphones) para inferência clínica instantânea, sincronizando os dados com a nuvem apenas quando há cobertura de rede.
 
