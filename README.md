@@ -1,3 +1,71 @@
+# 🩸 Sangue-Virtual-AI
+
+Um pipeline de Inteligência Artificial de ponta a ponta (Edge-Cloud) projetado para a triagem não invasiva de anemia. O sistema utiliza a câmera de smartphones e modelos avançados de Visão Computacional e Deep Learning para estimar níveis de hemoglobina, operando com alta eficiência mesmo em cenários de conectividade restrita (áreas remotas).
+
+---
+
+## 📌 Visão Geral do Projeto
+
+O **Sangue-Virtual-AI** propõe uma abordagem moderna para diagnósticos preliminares em campanhas de saúde móvel. Superando as limitações de análises estatísticas globais, o projeto evoluiu para o uso de **Vision Transformers (ViT)**, capazes de capturar a topologia espacial fina e padrões cromáticos sutis do tecido conjuntivo palpebral associados à palidez anêmica.
+
+A arquitetura foi desenhada com foco em **Edge Computing**, garantindo inferência local em tempo real no dispositivo móvel, com sincronização offline-first para a nuvem.
+
+---
+
+## 🚀 Stack Tecnológica e Arquitetura
+
+O ecossistema do projeto é dividido em camadas especializadas:
+
+*   **Processamento e Calibração Óptica:** `OpenCV`, `NumPy`, `Scikit-Image`. Implementação de algoritmos de balanço de branco (*Gray World*) para mitigar vieses de iluminação (flash vs. luz ambiente).
+*   **Detecção e Segmentação (Teacher-Student):** `SAM 2` (Segment Anything Model) para rotulação automática (Auto-Labeling) guiada por prompts, gerando *Bounding Boxes* para o treinamento cirúrgico de modelos leves como o `YOLOv11-Nano`.
+*   **Deep Learning Core (Regressão):** `PyTorch` e `timm`. Substituição de classificadores densos tradicionais por um modelo **Vision Transformer** (`vit_tiny_patch16_224`) otimizado para regressão contínua de hemoglobina (g/dL).
+*   **Edge Computing (Mobile):** Conversão de modelos via `ONNX` (Opset 14) rodando no motor `onnxruntime`, atingindo um tempo de inferência impressionante de **< 60ms**, com um *payload* final otimizado de **~21 MB**.
+*   **Backend e Orquestração (Nuvem):** `FastAPI`, `Uvicorn` e validação via `Pydantic`. Gerenciamento de versionamento de dados com `DVC` e armazenamento no `AWS S3`, suportando sincronização assíncrona assim que a rede é restabelecida.
+
+---
+
+## 📊 Desempenho Clínico e Técnico Preliminar
+
+*   **Alta Revocação (Recall):** Na fase de classificação inicial (PyTorch V2), o modelo atingiu **89% de recall** para a classe anêmica (F1-score de 0.85). Em triagens médicas, isso minimiza drasticamente os falsos negativos, garantindo segurança ao paciente.
+*   **Eficiência de Hardware:** O pipeline nativo empacotado para o celular prova que não é necessária uma GPU em nuvem para o diagnóstico primário, viabilizando o uso em larga escala na saúde pública.
+
+---
+
+## 🛣️ Roadmap e Próximos Passos (Regulamentação)
+
+Para evoluir de um protótipo avançado para validação em campo (foco em padrões ANVISA/FDA), os próximos marcos incluem:
+
+1.  **Isolamento Estrito de ROI:** Aprimorar o pipeline *Gray World* aplicando a normalização cromática *apenas* na Região de Interesse segmentada, evitando distorções causadas pelo fundo da imagem.
+2.  **Diversidade de Dataset:** Validar o modelo contra um espectro mais amplo de tons de pele (escala de Fitzpatrick) e artefatos gerados por lentes de smartphones de baixo custo.
+3.  **Métricas de Erro Clínico:** Transição das métricas estatísticas clássicas de IA para o **Erro Absoluto Médio (MAE)** na regressão de hemoglobina (g/dL), comparando diretamente com o padrão-ouro (hemograma completo laboratorial).
+
+---
+
+## ⚠️ Aviso Legal (Disclaimer Médico)
+
+Este projeto tem finalidade estritamente **educacional, experimental e de pesquisa em engenharia de software e IA**. 
+
+A análise visual realizada por este sistema **NÃO substitui, de forma alguma, um diagnóstico médico profissional ou exames laboratoriais**. Os criadores e desenvolvedores deste projeto não assumem responsabilidade por decisões clínicas baseadas nas predições do algoritmo.
+
+---
+
+## 👨‍💻 Autor e Contato
+
+**[anonimo]**
+Engenheiro de Software | Especialista em IA e Visão Computacional
+
+
+
+
+
+
+
+
+
+
+
+
+
 Documento de Arquitetura de Software: Sistema Edge-AI para Diagnóstico de Anemia.
 
 1. Resumo Executivo
