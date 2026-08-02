@@ -31,7 +31,7 @@ Comunicação & Armazenamento: HTTP/REST (http), Armazenamento Chave-Valor (shar
 1. Clone o repositório:
 
 Bash
-git clone https://github.com/SEU_USUARIO/app_verifica_anemia.git
+git clone https://github.com/joseremedios-max/app_verifica_anemia.git
 2. Acesse a pasta do projeto:
 
 Bash
