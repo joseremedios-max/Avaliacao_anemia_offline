@@ -49,20 +49,71 @@ A análise visual realizada por este sistema **NÃO substitui, de forma alguma, 
 
 ---
 
+# 🩸 OcularAI: Triagem Não-Invasiva de Anemia via Visão Computacional e Edge Computing
+
+![Python](https://img.shields.io/badge/Python-3.10%2B-blue)
+![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=flat&logo=pytorch&logoColor=white)
+![ONNX](https://img.shields.io/badge/ONNX-005CED?style=flat&logo=onnx&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat&logo=fastapi&logoColor=white)
+![YOLO](https://img.shields.io/badge/YOLOv11-00FFFF?style=flat&logo=yolo&logoColor=black)
+
+## 📌 Sobre o Projeto
+Este projeto de **HealthTech** propõe um sistema fim a fim (End-to-End) para a triagem não-invasiva de anemia. Utilizando fotografias da conjuntiva palpebral (parte interna do olho), o sistema processa imagens ópticas e cruza esses dados com metadados clínicos (Idade e Sexo) para prever níveis de hemoglobina sem a necessidade de coleta de sangue.
+
+O sistema foi desenhado para atuar em regiões remotas (offline) e sincronizar dados com a nuvem quando houver conexão, otimizando o fluxo de diagnósticos em locais com infraestrutura laboratorial limitada.
+
+## 🚀 Arquitetura do Sistema
+
+A solução foi dividida em 4 pilares principais:
+
+1. **Computer Vision Automática (YOLOv11):** Segmentação e recorte cirúrgico automático da conjuntiva palpebral.
+2. **Machine Learning Clássico (Random Forest / XGBoost):** Classificador primário de triagem com calibração de *threshold* focado na redução de falsos positivos (**Acurácia de ~81%**).
+3. **Deep Learning no Edge (Vision Transformer - ViT):** Modelo PyTorch de regressão de hemoglobina, convertido e otimizado para o formato **ONNX**.
+4. **Cloud API (FastAPI):** Servidor assíncrono para telemetria e recepção de exames realizados offline.
+
+---
+
+## 🔬 Principais Conquistas Técnicas
+
+- **Edge Computing Extremo:** O modelo Vision Transformer (ViT) foi reduzido a um arquivo portátil de **21.21 MB**, capaz de rodar inferências em CPU (celulares comuns) em **37 milissegundos**.
+- **Descoberta de Biomarcadores:** Análises de *Feature Importance* revelaram que a textura vascular (desvio padrão das cores) tem maior peso preditivo clínico do que a média de palidez geral.
+- **Integração Clínico-Óptica:** O pipeline funde dados biométricos (RGB, HSV, YCbCr) com fisiológicos (One-Hot Encoding para Idade e Sexo).
+- **Zero Dependência do PyTorch em Produção:** Inferência 100% nativa utilizando `onnxruntime` e `numpy`, garantindo compatibilidade com Android/iOS.
+
+---
+
+## 🛠️ Tecnologias Utilizadas
+
+- **Visão Computacional:** OpenCV, MediaPipe, Ultralytics (YOLOv11).
+- **Processamento de Dados:** Pandas, NumPy, Scikit-Learn.
+- **Deep Learning:** PyTorch, TIMM (Torch Image Models).
+- **Implantação (Deployment):** ONNX Runtime, FastAPI, Pydantic, Uvicorn.
+- **Monitoramento/Versionamento:** DVC (Data Version Control).
+
+---
+
+## 📂 Estrutura do Repositório (Resumo)
+
+```text
+├── data/                  # Conjunto de dados e metadados clínicos
+├── models/                # Modelos salvos (.pkl e .onnx)
+│   ├── classificador_anemia_rf.pkl
+│   └── vit_hemoglobina_mobile_final.onnx
+├── src/
+│   ├── etl_unificacao_dados.py    # Pipeline de limpeza e extração de cores
+│   ├── train_rf_classifier.py     # Treinamento do Random Forest
+│   ├── train_vit_pytorch.py       # Arquitetura e treino do Vision Transformer
+│   ├── export_to_onnx.py          # Script de conversão PyTorch -> ONNX
+│   ├── onnx_mobile_sim.py         # Simulador de inferência Edge (37ms)
+│   └── api_nuvem.py               # Servidor FastAPI
+└── README.md
+
+
+
 ## 👨‍💻 Autor e Contato
 
 **[anonimo]**
 Engenheiro de Software | Especialista em IA e Visão Computacional
-
-
-
-
-
-
-
-
-
-
 
 
 
