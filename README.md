@@ -1,4 +1,4 @@
-🩸 Verifica Anemia (Edge-AI)
+🩸 Laboratorio_Verifica_Anemia (Edge-AI)
 Este é um aplicativo de triagem médica experimental desenvolvido em Flutter. Ele utiliza Visão Computacional e Inteligência Artificial (Edge-AI) rodando diretamente no celular (offline) para estimar os níveis de hemoglobina do paciente através de uma foto da conjuntiva palpebral.
 
 O projeto foi construído com foco em Offline-First, permitindo o diagnóstico em áreas remotas, mas conta com sincronização inteligente na nuvem (FastAPI) para envio de dados e telemetria (GPS e Bateria) quando há conexão disponível.
@@ -48,7 +48,7 @@ flutter run
 Para testar a sincronização remota, altere o IP no arquivo correspondente à tela da câmera (_syncWithCloud). O servidor esperado é uma API em Python/FastAPI configurada para receber requisições POST com a estrutura JSON correspondente.
 
 ⚠️ Aviso Legal (Disclaimer)
-Este aplicativo tem caráter estritamente educacional, experimental e de pesquisa em engenharia de software e IA. O teste de visão computacional serve apenas como triagem preliminar e não substitui, sob nenhuma hipótese, exames de sangue laboratoriais (hemograma) ou a avaliação de um profissional de saúde qualificado. Em caso de suspeita de anemia, procure orientação médica.
+Este laboratorio de aplicao tem caráter estritamente educacional, experimental e de pesquisa em engenharia de software e IA. O teste de visão computacional serve apenas como triagem preliminar e não substitui, sob nenhuma hipótese, exames de sangue laboratoriais (hemograma) ou a avaliação de um profissional de saúde qualificado. Em caso de suspeita de anemia, procure orientação médica.
 
 ## 📂 Estrutura do Repositório (Resumo)
 
@@ -70,9 +70,8 @@ Este aplicativo tem caráter estritamente educacional, experimental e de pesquis
 
 ## 👨‍💻 Autor e Contato
 
-**[anonimo]**
-Engenheiro de Software | Especialista em IA e Visão Computacional
-
+**[autonomo]**
+Engenheiro de Software | Especialista estrategico  em IA e Visão Computacional
 
 
 Documento de Arquitetura de Software: Sistema Edge-AI para Diagnóstico de Anemia.
