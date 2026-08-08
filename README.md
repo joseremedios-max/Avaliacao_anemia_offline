@@ -1,9 +1,9 @@
-##🩸 Laboratorio_Verifica_Anemia (Edge-AI)
+🩸 Laboratorio_Verifica_Anemia (Edge-AI)
 Este é um aplicaçao de triagem médica experimental desenvolvido em Flutter. Ele utiliza Visão Computacional e Inteligência Artificial (Edge-AI) rodando diretamente no celular (offline) para estimar os níveis de hemoglobina do paciente através de uma foto da conjuntiva palpebral.
 
 O projeto foi construído com foco em Offline-First, permitindo o diagnóstico em áreas remotas, mas conta com sincronização inteligente na nuvem (FastAPI) para envio de dados e telemetria (GPS e Bateria) quando há conexão disponível.
 
-##🚀 Principais Funcionalidades
+🚀 Principais Funcionalidades
 Diagnóstico Offline (Edge-AI): Processamento do modelo Vision Transformer (ViT) via onnxruntime direto no hardware do dispositivo, sem depender de internet.
 
 Validação de Qualidade de Imagem: Algoritmo de segurança que analisa a contagem de pixels avermelhados, impedindo a geração de laudos a partir de fotos incorretas ou sem iluminação adequada.
@@ -50,7 +50,7 @@ Para testar a sincronização remota, altere o IP no arquivo correspondente à t
 ⚠️ Aviso Legal (Disclaimer)
 Este laboratorio de aplicao tem caráter estritamente educacional, experimental e de pesquisa em engenharia de software e IA. O teste de visão computacional serve apenas como triagem preliminar e não substitui, sob nenhuma hipótese, exames de sangue laboratoriais (hemograma) ou a avaliação de um profissional de saúde qualificado. Em caso de suspeita de anemia, procure orientação médica.
 
-## 📂 Estrutura do Repositório (Resumo)
+📂 Estrutura do Repositório (Resumo)
 
 ```text
 ├── data/                  # Conjunto de dados e metadados clínicos
@@ -68,14 +68,14 @@ Este laboratorio de aplicao tem caráter estritamente educacional, experimental 
 
 
 
-## 👨‍💻 Autor e Contato
+ 👨‍💻 Autor e Contato
 
-**[autonomo]**
-Engenheiro de Software | Especialista estrategico  em IA e Visão Computacional
+**[autônomo]**
+Engenheiro de Software | Especialista estratégico  em IA e Visão Computacional
 
 
 Documento de Arquitetura de Software: Sistema Edge-AI para Diagnóstico de Anemia.
-
+Planejamento do projeto:
 1. Resumo Executivo
 Este documento descreve a arquitetura de um sistema inteligente de grau médico (Medical-Grade) focado no diagnóstico não invasivo de anemia infantil em áreas remotas. A solução elimina a dependência de conectividade constante, utilizando processamento Edge Computing em dispositivos móveis (smartphones) para inferência clínica instantânea, sincronizando os dados com a nuvem apenas quando há cobertura de rede.
 
