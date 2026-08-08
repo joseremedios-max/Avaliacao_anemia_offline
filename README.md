@@ -1,9 +1,9 @@
-🩸 Laboratorio_Verifica_Anemia (Edge-AI)
+🏥🩺🩸💉🧑‍⚕️👩‍⚕️ Laboratorio_Verifica_Anemia (Edge-AI)
 Este é um aplicaçao de triagem médica experimental desenvolvido em Flutter. Ele utiliza Visão Computacional e Inteligência Artificial (Edge-AI) rodando diretamente no celular (offline) para estimar os níveis de hemoglobina do paciente através de uma foto da conjuntiva palpebral.
 
 O projeto foi construído com foco em Offline-First, permitindo o diagnóstico em áreas remotas, mas conta com sincronização inteligente na nuvem (FastAPI) para envio de dados e telemetria (GPS e Bateria) quando há conexão disponível.
 
-🚀 Principais Funcionalidades
+🔍🧪🔬📡🌐📶📱 Principais Funcionalidades
 Diagnóstico Offline (Edge-AI): Processamento do modelo Vision Transformer (ViT) via onnxruntime direto no hardware do dispositivo, sem depender de internet.
 
 Validação de Qualidade de Imagem: Algoritmo de segurança que analisa a contagem de pixels avermelhados, impedindo a geração de laudos a partir de fotos incorretas ou sem iluminação adequada.
@@ -16,7 +16,7 @@ Banco de Dados Local: Salvamento do histórico de exames no próprio aparelho ut
 
 Sincronização Nuvem & Telemetria: Coleta de dados do GPS e nível de bateria do celular, enviando o payload completo via HTTP POST para um servidor FastAPI no momento do diagnóstico.
 
-🛠️ Tecnologias Utilizadas
+📡🌐📶📱 Tecnologias Utilizadas
 Linguagem & Framework: Dart & Flutter (SDK >=3.0.0)
 
 IA & Visão Computacional: ONNX Runtime (onnxruntime), Processamento de Imagem (image)
@@ -27,7 +27,7 @@ Telemetria: GPS (geolocator), Monitoramento de Hardware (battery_plus)
 
 Comunicação & Armazenamento: HTTP/REST (http), Armazenamento Chave-Valor (shared_preferences)
 
-📱 Como Executar o Projeto
+📱🔒🛡️🔑 Como Executar o Projeto
 1. Clone o repositório:
 
 Bash
